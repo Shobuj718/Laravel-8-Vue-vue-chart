@@ -1,0 +1,36 @@
+<script>
+import { Line } from 'vue-chartjs';
+export default {
+   extends: Line,
+   mounted() {
+         let uri = '/api/chart';
+         let Years = new Array();
+         let Labels = new Array();
+         let Prices = new Array();
+         this.axios.get(uri).then((response) => {
+            let data = response.data;
+            let name = '';
+            console.log(response.data)
+            if(data) {
+               data.forEach(element => {
+               Years.push(element.year);
+               Labels.push(element.name);
+               Prices.push(element.price);
+               });
+               this.renderChart({
+               labels: Years,
+               datasets: [{
+                  label: Labels,
+                  backgroundColor: '#FC2525',
+                  data: Prices
+
+              }]
+         }, {responsive: true, maintainAspectRatio: false})
+       }
+       else {
+          console.log('No data');
+       }
+      });            
+   }
+}
+</script>

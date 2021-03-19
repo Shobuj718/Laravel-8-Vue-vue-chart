@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +16,14 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+
+
 Route::get('{any}', function () {
     return view('app');
 })->where('any', '.*');
+
+/*Route::post('/coins', 'CoinController@store');
+
+Route::get('/chart', 'CoinController@index');
+Route::get('/charts', 'CoinController@charts');*/
+
