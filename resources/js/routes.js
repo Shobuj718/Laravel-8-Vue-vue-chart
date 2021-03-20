@@ -9,6 +9,8 @@ import AddCoin from './components/AddCoin.vue';
 
 import Chart from './components/ChartComponent.vue';
 
+import Post from './components/AddPost.vue';
+
 
 export const routes = [
     {
@@ -35,5 +37,10 @@ export const routes = [
         name: 'chart',
         path: '/chart',
         component: Chart
+    },
+    {
+        name: 'post',
+        path: '/post',
+        component: Post
     }
 ];

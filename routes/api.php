@@ -24,5 +24,8 @@ Route::middleware('api')->group(function(){
 	Route::post('/coins', 'CoinController@store');
 
 	Route::get('/chart', 'CoinController@index');
+
+	Route::get('/post', 'PostController@create')->name('create');
+	Route::post('/post', 'PostController@store')->name('store');
 	
 });
